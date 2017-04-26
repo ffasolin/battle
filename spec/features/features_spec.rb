@@ -1,6 +1,8 @@
 feature 'home page' do
-    it 'should return string in home page' do
+    scenario 'should return string in home page' do
       visit('/')
-      expect(page).to have_content 'Testing infrastructure working!'
+      fill_in('name', with: 'Filipe')
+      click_button('Submit')
+      expect(page).to have_content('Filipe')
     end
 end
