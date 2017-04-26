@@ -5,6 +5,7 @@ class Battle < Sinatra::Base
   set :session_secret, ''
 
   get '/' do
+    session[:confirmation] = nil
     erb(:index)
   end
 
@@ -17,9 +18,14 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
+    @confirmation = session[:confirmation]
     erb(:play)
+  end
+
+  post '/hit' do
+    session[:confirmation] = 'OUCH!'
+    redirect '/play'
   end
 
   run! if app_file == $0
 end
- 
