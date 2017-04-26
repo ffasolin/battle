@@ -6,26 +6,23 @@ class Battle < Sinatra::Base
   set :session_secret, ''
 
   get '/' do
-    session[:confirmation] = nil
     erb(:index)
   end
 
   post '/names' do
-    p params
     $player_1 = Player.new(params[:player_1])
     $player_2 = Player.new(params[:player_2])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = $player_1.name
-    @player_2 = $player_2.name
-    @confirmation = session[:confirmation]
+    @player_1 = $player_1
+    @player_2 = $player_2
     erb(:play)
   end
 
   post '/hit' do
-    session[:confirmation] = 'OUCH!'
+    $player_2.get_hit
     redirect '/play'
   end
 

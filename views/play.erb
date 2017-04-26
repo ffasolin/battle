@@ -1,4 +1,4 @@
-<%= @player_1 %> 60pts vs. <%= @player_2 %> 60pts <%= @confirmation %><p>
+<%= @player_1.name %> <%= @player_1.hp %>pts vs. <%= @player_2.name %> <%= @player_2.hp %>pts<p>
   <form action='/hit' method='post'>
     <input type='submit' value='hit'>
   </form>
