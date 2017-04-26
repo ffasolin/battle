@@ -8,8 +8,4 @@ class Player
     @hp = STARTING_HP
   end
 
-  def get_hit
-    @hp -= 10
-  end
-  
 end
