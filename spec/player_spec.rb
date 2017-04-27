@@ -8,4 +8,9 @@ player = described_class.new('Filipe')
       expect(player.name).to eq 'Filipe'
   end
 
+  describe '#receive_damage' do
+    it 'reduces hp by 10' do
+      expect { player.receive_damage }.to change { player.hp }.by(-10)
+    end
+  end
 end
