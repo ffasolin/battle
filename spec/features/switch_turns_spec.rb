@@ -4,7 +4,7 @@ feature '#switch_turns' do
     expect(page).to have_content("Filipe's turn!")
   end
 
-  scenario "after player 1 attacks" do
+  scenario 'after player 1 attacks' do
     sign_in_and_play
     click_button('hit')
     visit('/play')

@@ -25,12 +25,18 @@ class Battle < Sinatra::Base
   get '/hit' do
     @game = $game
     @game.attack(@game.turns.last)
+    return redirect '/game-over' if @game.turns.first.dead?
     redirect '/attacked'
   end
 
   get '/attacked' do
     @game = $game
     erb(:attacked)
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb(:'game-over')
   end
 
   run! if app_file == $PROGRAM_NAME
