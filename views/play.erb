@@ -1,4 +1,5 @@
 <%= @game.player_1.name %> <%= @game.player_1.hp %>pts vs. <%= @game.player_2.name %> <%= @game.player_2.hp %>pts<p>
+  <%= @game.turns.first.name %>'s turn!
   <form action='/hit'>
     <input type='submit' value='hit'>
   </form>

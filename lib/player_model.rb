@@ -1,5 +1,4 @@
 class Player
-
   attr_reader :name
   attr_accessor :hp
 
@@ -13,6 +12,4 @@ class Player
   def receive_damage
     @hp -= 10
   end
-
-
 end

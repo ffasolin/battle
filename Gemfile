@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rspec'
-gem 'sinatra'
 gem 'capybara'
+gem 'rspec'
+gem 'rubocop'
+gem 'sinatra'

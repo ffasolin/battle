@@ -24,9 +24,9 @@ class Battle < Sinatra::Base
 
   get '/hit' do
     @game = $game
-    @game.attack(@game.player_2)
+    @game.attack(@game.turns.last)
     redirect '/play'
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
