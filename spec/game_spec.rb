@@ -16,7 +16,8 @@ describe Game do
     it "calls player_2's turn" do
       game = described_class.new(player1, player2)
       allow(player2).to receive(:receive_damage)
-      game.attack(player2)
+      game.attack(game.turns.last)
+      expect(game.turns.first).to eq player2
     end
   end
 end
