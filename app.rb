@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
 
   get '/hit' do
     @game = $game
-    @game.attack(@game.player2)
+    @game.attack(@game.player_2)
     redirect '/play'
   end
 
